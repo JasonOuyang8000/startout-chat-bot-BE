@@ -1,7 +1,7 @@
 import models
 from dotenv import load_dotenv
 import os
-from flask import Flask
+from flask import Flask,request
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
@@ -93,6 +93,15 @@ def others():
     try:
         print("I don't seem to fit into any of these categories")
         return{'link':'https://startout.org/contact/','message':'Can I help you with anything else?'}
+    except print("contact's link is not active"):
+        return{'message':"contact's link is not active"},404
+
+@app.route('/user_input',methods=['POST'])
+def user_input():
+    try:
+        input = request.json['input']
+        print("user input has been recieved")
+        return{'input'}
     except print("contact's link is not active"):
         return{'message':"contact's link is not active"},404
 
