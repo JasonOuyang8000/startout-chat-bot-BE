@@ -26,7 +26,7 @@ def user_portal():
     try:
 
      
-        response = {"investor":['investor','banker','lender','shareholder','stockholder','venture capitalist','backer',"capitalist",'stakeholder','angel investor'],'founder':['founder','creator',"author",'establisher','architect','developer','builder'], 'mentor':['teacher',"guide",'tutor','instructor','advisor','supporter','coach','counsellor','mentor'],'donate':['donate','give','contribute','make a donation','give a donation','make a contribution','contribution','pledge','grant','hand out','gift','money'],'networQ':['network',"networQ",'connect','reach out', "community",'connection'],'options':['option',"other",'help',"contact","options",'others',"assist",'assistance'],'events':["events",'event','local','community','insparation','city']}
+        response = {"investor":['investor','banker','lender','shareholder','stockholder','venture capitalist','backer',"capitalist",'stakeholder','angel investor','Becoming and investor'],'founder':['founder','creator',"author",'establisher','architect','developer','builder','Getting support as a founder'], 'mentor':['Being a mentor','teacher',"guide",'tutor','instructor','advisor','supporter','coach','counsellor','mentor'],'donate':['donate','give','contribute','make a donation','give a donation','make a contribution','contribution','pledge','grant','hand out','gift','money'],'networQ':['network',"networQ",'connect','reach out', "community",'connection'],'options':['option',"other",'help',"contact","options",'others',"assist",'assistance'],'events':["events",'event','local','community','insparation','city']}
         user_input = request.json['input']
      
      
