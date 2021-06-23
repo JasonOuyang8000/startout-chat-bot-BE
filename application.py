@@ -21,11 +21,16 @@ def root():
 app.route('/', methods=["GET"])(root)
 
 
-@app.route('/userportal/', methods=['POST'])
+@app.route('/userportal', methods=['POST'])
 def user_portal():
     try:
-        response = {"investor":['investor','banker','lender','shareholder','stockholder','venture capitalist','backer',"capitalist",'stakeholder','angel investor'],'founder':['founder','creator',"author",'establisher','architect','developer','builder'], 'mentor':['teacher',"guide",'tutor','instructor','advisor','supporter','coach','counsellor'],'donate':['donate','give','contribute','make a donation','give a donation','make a contribution','contribution','pledge','grant','hand out','gift','money'],'networQ':['network',"networQ",'connect','reach out', "community",'connection'],'options':['option',"other",'help',"contact","options",'others',"assist",'assistance'],'events':["events",'event','local','community','insparation','city']}
+
+     
+        response = {"investor":['investor','banker','lender','shareholder','stockholder','venture capitalist','backer',"capitalist",'stakeholder','angel investor'],'founder':['founder','creator',"author",'establisher','architect','developer','builder'], 'mentor':['teacher',"guide",'tutor','instructor','advisor','supporter','coach','counsellor','mentor'],'donate':['donate','give','contribute','make a donation','give a donation','make a contribution','contribution','pledge','grant','hand out','gift','money'],'networQ':['network',"networQ",'connect','reach out', "community",'connection'],'options':['option',"other",'help',"contact","options",'others',"assist",'assistance'],'events':["events",'event','local','community','insparation','city']}
         user_input = request.json['input']
+     
+     
+        print(user_input)
         if user_input in response["investor"]:
             return{'link':'https://startout.org/investor-portal/','message':'Can I help you with anything else?'}
         elif user_input in response['founder']:
@@ -40,9 +45,11 @@ def user_portal():
             return{'link':'https://startout.org/contact/','message':'Can I help you with anything else?'}
         elif user_input in response['events']:
             return{'link':'https://startout.org/all-events/','message':'Can I help you with anything else?'}
-            
+        else:
+            return {'message': 'Sorry,I do not understand.'}
         
-    except print(0):
+    except Exception as e:
+        print(e)
         pass
 
 
